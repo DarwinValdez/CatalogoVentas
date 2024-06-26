@@ -1,0 +1,228 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #002244;
+    color: white;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+h1{
+    text-align: center;
+}
+
+
+#product-list h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.product-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-item h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.product-item p {
+    font-size: 1.2rem;
+    color: #e60000;
+}
+
+footer {
+    background-color: #002244;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.add-to-cart-button {
+    display: block;
+    margin: 0 auto; /* Centra horizontalmente */
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #45a049; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos para el carrito de compras */
+#cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px; /* Ancho del carrito */
+    height: 100%; /* Altura del 100% */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    overflow-y: auto; /* Permitir desplazamiento vertical si es necesario */
+}
+
+#cart h2 {
+    text-align: center;
+}
+
+#cart-items {
+    max-height: calc(100% - 60px); /* Altura máxima de los ítems del carrito */
+    overflow-y: auto; /* Permitir desplazamiento vertical si es necesario */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.delete-button {
+    background-color: #f44336; /* Color de fondo rojo */
+    color: white;
+    border: none;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Cambio de color al pasar el mouse */
+}
+
+#cart h2 {
+    text-align: center;
+    position: relative;
+}
+
+#toggle-cart-button {
+    position: absolute;
+    top: 20px;
+    right: 20rem;
+    background-color: #ffffff; /* Color de fondo verde */
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+#toggle-cart-button:hover {
+    background-color: #45a049; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos para la sección del carrito */
+#cart {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Empieza fuera de la pantalla */
+    width: 300px; /* Ancho del carrito */
+    height: 100%; /* Altura del 100% */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    overflow-y: auto; /* Permitir desplazamiento vertical si es necesario */
+    transition: right 0.3s ease; /* Transición para el deslizamiento */
+    z-index: 999; /* Asegura que esté detrás del botón flotante */
+}
+
+#cart.open {
+    right: 0; /* Mostrar el carrito */
+}
+
+
+#clear-cart-button {
+    background-color: #e60000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+#clear-cart-button:hover {
+    background-color: #cc0000;
+}
+
+#cart {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    width: 300px;
+    height: 100%;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+#cart.open {
+    display: block; /* Mostrar cuando tiene la clase 'open' */
+}
+
+#cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#clear-cart-button {
+    background-color: #ff6347; /* Color rojo */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#clear-cart-button:hover {
+    background-color: #e0523c; /* Cambio de color al pasar el mouse */
+}
+
